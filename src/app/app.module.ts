@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GridListComponent } from './demo/grid-list/grid-list.component';
+import { GridListComponent } from './sandbox/grid-list/grid-list.component';
 import { AgGridModule } from 'ag-grid-angular';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/layout/header/header.component';
 
 @NgModule({
   declarations: [
