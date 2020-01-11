@@ -33,6 +33,7 @@ speed-measure-plugin*.json
 
 wsData.py
 python_data.json
+sandbox
 
 # misc
 /.sass-cache
