@@ -1,0 +1,15 @@
+<!-- <input type="text" placeholder="filter" (keyup)="quickSearch()" [(ngModel)]="searchValue"> -->
+<input type="text" placeholder="search.." (keyup)="quickSearch()" [(ngModel)]="searchValue">
+<ag-grid-angular 
+    style="height: 600px;" 
+    class="ag-theme-balham"
+    [pagination]="true"
+    suppressHorizontalScroll
+    [gridOptions]="gridOptions"
+    [rowData]="employeeList"
+    [columnDefs]="columnDefs"
+    [animateRows]="true"
+    (gridReady)="onGridReady($event)"
+    >
+</ag-grid-angular>
+<!-- (gridReady)="onGridRready($event)" -->
