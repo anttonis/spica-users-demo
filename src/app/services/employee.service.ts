@@ -16,7 +16,7 @@ export class EmployeeService {
 
   getEmployees():Observable<Employee[]>{
 
-    this.spica_url = 'http://rdweb.spica.com:5213/timeapi/employee';
+    //this.spica_url = 'http://rdweb.spica.com:5213/timeapi/employee';
     return this.http.get<Employee[]>(this.spica_url);
 
     // fetch('http://127.0.0.1:5000/employee')
