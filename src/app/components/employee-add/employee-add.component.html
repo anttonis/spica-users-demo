@@ -1,0 +1,6 @@
+<form class="form" (ngSubmit)="onAddEmployee()">    
+    <input type="text" name="firstname" placeholder="First Name" [(ngModel)]="FirstName">
+    <input type="text" name="lastname" class="left_margin" placeholder="Last Name" [(ngModel)]="LastName">
+    <button class="btn btn-success left_margin" type="submit" >Add</button>
+    <span class="left_margin">{{ notValidInput }}</span>
+</form>

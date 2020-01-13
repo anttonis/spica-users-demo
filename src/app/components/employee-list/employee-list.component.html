@@ -1,15 +1,34 @@
-<!-- <input type="text" placeholder="filter" (keyup)="quickSearch()" [(ngModel)]="searchValue"> -->
-<input type="text" placeholder="search.." (keyup)="quickSearch()" [(ngModel)]="searchValue">
-<ag-grid-angular 
-    style="height: 600px;" 
-    class="ag-theme-balham"
-    [pagination]="true"
-    suppressHorizontalScroll
-    [gridOptions]="gridOptions"
-    [rowData]="employeeList"
-    [columnDefs]="columnDefs"
-    [animateRows]="true"
-    (gridReady)="onGridReady($event)"
-    >
-</ag-grid-angular>
+
+<div class="container">
+    <div class="row" style="height: 110px;">
+        <mat-tab-group>
+            <mat-tab label="Search">
+                <div class="tab_content_row">
+                    <input type="text" placeholder="Enter text search.." (keyup)="quickSearch()" [(ngModel)]="searchValue">
+                </div>
+            </mat-tab>
+            <mat-tab label="Add User">
+                <div class="tab_content_row">
+                    <app-employee-add (addEmployee)="addEmployee($event)"></app-employee-add>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="row">
+        <ag-grid-angular 
+            style="height: 600px;" 
+            class="ag-theme-balham"
+            [pagination]="true"
+            suppressHorizontalScroll
+            [gridOptions]="gridOptions"
+            [rowData]="employeeList"
+            [columnDefs]="columnDefs"
+            [animateRows]="true"
+            (gridReady)="onGridReady($event)"
+            >
+        </ag-grid-angular>
+    </div>
+</div>
+
+
 <!-- (gridReady)="onGridRready($event)" -->

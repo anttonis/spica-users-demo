@@ -8,7 +8,7 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  
+
   private gridApi;
   private gridColumnApi;
   private searchValue;
@@ -41,4 +41,9 @@ export class EmployeeListComponent implements OnInit {
     this.gridApi.setQuickFilter(this.searchValue);
   }
 
+  addEmployee(employee: Employee){
+    this.employeeService.addEmployee(employee).subscribe(employee => {
+      this.employeeList.push(employee);
+    })
+  }
 }
