@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+}
+
+.settings_input {
+    width: 30rem;
+    float:right;
+    margin-left: 10px;
+}
+  
+.tokencenter {
+    position: absolute;
+    top: 10rem;
+    width:35rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.button_holder {
+    text-align: center;
+    margin: auto;
+}
+
+.button_save {
+    width: 50%;
+}

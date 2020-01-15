@@ -1,0 +1,21 @@
+
+<div class="container">
+    <div class="tokencenter">
+        <form class="form-group" (ngSubmit)="onSaveToken()">
+            <div class="row form-group">
+                <label for="apiurl_input">Api URL:</label>
+                <input class="settings_input" type="text" name="apiurl" placeholder="Enter api url" [(ngModel)]="apiurl" id="apiurl_input">
+            </div>
+            <div class="row form-group">
+                <label for="token_input">Token:</label>
+                <input class="settings_input" type="text" name="token" placeholder="Enter token" [(ngModel)]="token" id="token_input"> 
+
+            </div>
+            <div class="row form-group button_holder">
+
+                <button class="btn btn-success button_save" type="submit">Save</button>
+            </div>
+           
+        </form>
+    </div>
+</div>

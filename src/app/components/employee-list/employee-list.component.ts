@@ -16,10 +16,11 @@ export class EmployeeListComponent implements OnInit {
   employeeList: Employee[];
 
   private columnDefs = [
-    {headerName: 'Id', field: 'Id', getQuickFilterText: () => ''},
+    //{headerName: 'Id', field: 'Id', getQuickFilterText: () => ''},
     {headerName: 'LastName', field: 'LastName'},
     {headerName: 'FirstName', field: 'FirstName'},
-    {headerName: 'Address', field: 'Address', getQuickFilterText: () => ''}
+    {headerName: 'Address', field: 'Address', getQuickFilterText: () => ''},
+    {headerName: 'Maticna st.', field: 'OrganizationalUnitId'}
   ];
 
   constructor(private employeeService: EmployeeService) { }

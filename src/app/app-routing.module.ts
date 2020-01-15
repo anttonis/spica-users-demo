@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './pages/users/users.component';
 import { PresenceComponent } from './pages/presence/presence.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 
 const routes: Routes = [
-  { path: '', component: EmployeeListComponent },
+  { path: '', component: SettingsComponent },
+  { path: 'settings', component: SettingsComponent },
   { path: 'users', component: UsersComponent },
   { path: 'presence', component: PresenceComponent }
 ];
@@ -16,4 +18,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [UsersComponent, PresenceComponent];
+export const routingComponents = [UsersComponent, PresenceComponent, SettingsComponent];
