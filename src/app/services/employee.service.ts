@@ -1,33 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { Employee } from '../models/Employee';
 import { Observable } from 'rxjs';
+import { Employee } from '../models/Employee';
+import { BaseService } from '../services/base.service';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class EmployeeService {
-  spica_url: string = 'http://127.0.0.1:5000/employee';
-  
+export class EmployeeService extends BaseService {
 
-  constructor(private http: HttpClient) { }
+  resource: string = 'employee'; 
+
+  constructor(http: HttpClient, configService: ConfigService) { 
+    super(http, configService);
+  }
 
   getEmployees():Observable<Employee[]>{
-
-    //this.spica_url = 'http://rdweb.spica.com:5213/timeapi/employee';
-    return this.http.get<Employee[]>(this.spica_url);
-
-    // fetch('http://127.0.0.1:5000/employee')
-    //   .then(result => result.json())
-    //   .then(data => {
-    //     // this.rowData = data
-    //     return data
-    //   })
+    console.log(this.getResourceURL('employee'));
+    return this.get<Employee[]>();
+    //return this.http.get<Employee[]>(this.getResourceURL(this.resource), this.getHttpOptions());
   }
 
   addEmployee(employee: Employee): Observable<Employee> {
-    return this.http.put<Employee>(this.spica_url, employee);
+    return this.put<Employee>(employee);
   }
 }

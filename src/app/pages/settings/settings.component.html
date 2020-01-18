@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="tokencenter">
-        <form class="form-group" (ngSubmit)="onSaveToken()">
+        <form class="form-group" (ngSubmit)="onSaveSettings()">
             <div class="row form-group">
                 <label for="apiurl_input">Api URL:</label>
                 <input class="settings_input" type="text" name="apiurl" placeholder="Enter api url" [(ngModel)]="apiurl" id="apiurl_input">
@@ -13,7 +13,7 @@
             </div>
             <div class="row form-group button_holder">
 
-                <button class="btn btn-success button_save" type="submit">Save</button>
+                <button class="btn btn-success button_save" type="submit"> {{ save_button_text }} </button>
             </div>
            
         </form>
