@@ -23,13 +23,11 @@ export class EmployeeAddComponent implements OnInit {
     //this.FirstName = this.FirstName.trim();
     //this.LastName = this.LastName.trim();
 
-
-
-    if (this.validateName(this.FirstName)) {
+    if (!this.validateName(this.FirstName)) {
       this.notValidInput = "Please enter valid 'First Name'.";
-    } else if (this.validateName(this.LastName)) {
+    } else if (!this.validateName(this.LastName)) {
       this.notValidInput = "Please enter valid 'Last Name'.";
-    } else if (this.validateEMSO()) {
+    } else if (!this.validateEMSO()) {
       this.notValidInput = "Please enter valid 'Maticna stevilka' (13 numbers).";
     } else {
       console.log("Valid!")
@@ -47,16 +45,24 @@ export class EmployeeAddComponent implements OnInit {
   }
 
   validateName(name: string) : boolean {
-    var trigger = name,
-      regexp = new RegExp('[A-Za-z]{1,}?'),
-      test = regexp.test(trigger);
-    return test;
+    if (!name) {
+      return false;
+    } else {
+      var trigger = name,
+        regexp = new RegExp('^[A-Za-z]{1,}?'),
+        test = regexp.test(trigger);
+      return test;
+    }
   }
 
   validateEMSO(): boolean {
-    var trigger = this.Emso,
+    if (!this.Emso){
+      return false;
+    } else {
+      var trigger = this.Emso,
       regexp = new RegExp('^[0-9]{13}$'),
       test = regexp.test(trigger);
-    return test;
+      return test;
+    }
   }
 }
