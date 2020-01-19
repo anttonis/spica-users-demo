@@ -20,13 +20,11 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
     // 'http://rdweb.spica.com:5213/timeapi/employee'
     let tok: string = this.configService.getToken();
-    console.log(tok)
     if (tok !== 'undefined') {
       this.token = tok
     }
 
     let url: string = this.configService.getApiURL();
-    console.log(url);
     if (url !== 'undefined') {
       this.apiurl = url
     }

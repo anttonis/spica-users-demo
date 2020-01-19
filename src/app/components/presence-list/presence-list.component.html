@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row" style="height: 110px;">
+        <mat-tab-group>
+            <mat-tab label="Employee Presence:">
+                <div class="tab_content_row">
+                    <input matInput type="datetime-local" placeholder="start date" [ngModel] = "datePresence">
+                    <button class="btn btn-success left_margin" type="submit" (click)="onPresenceSearch()">Search</button>    
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="row">
+        <ag-grid-angular 
+            style="height: 600px;" 
+            class="ag-theme-balham"
+            [pagination]="true"
+            suppressHorizontalScroll
+            [gridOptions]="gridOptions"
+            [rowData]="presenceEmployeeList"
+            [columnDefs]="columnDefs"
+            [animateRows]="true"
+            (gridReady)="onGridReady($event)"
+            >
+        </ag-grid-angular>
+    </div>
+</div>
+
+
+<!-- (gridReady)="onGridRready($event)" -->

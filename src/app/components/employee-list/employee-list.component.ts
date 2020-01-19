@@ -10,17 +10,15 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeeListComponent implements OnInit {
 
   private gridApi;
-  private gridColumnApi;
   private searchValue;
 
   employeeList: Employee[];
 
   private columnDefs = [
-    //{headerName: 'Id', field: 'Id', getQuickFilterText: () => ''},
-    {headerName: 'LastName', field: 'LastName'},
     {headerName: 'FirstName', field: 'FirstName'},
+    {headerName: 'LastName', field: 'LastName'},
     {headerName: 'Address', field: 'Address', getQuickFilterText: () => ''},
-    {headerName: 'Maticna st.', field: 'OrganizationalUnitId'}
+    {headerName: 'Maticna st.', field: 'AdditionalField1'}
   ];
 
   constructor(private employeeService: EmployeeService) { }
@@ -33,7 +31,6 @@ export class EmployeeListComponent implements OnInit {
 
   onGridReady(params): void {
     this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
     this.gridApi.sizeColumnsToFit();
   }
 
@@ -45,6 +42,10 @@ export class EmployeeListComponent implements OnInit {
   addEmployee(employee: Employee){
     this.employeeService.addEmployee(employee).subscribe(employee => {
       this.employeeList.push(employee);
+      // TODO - update grid with employee without the api fetch
+      let arrEmp: Employee[] = [];
+      arrEmp.push(employee);
+      this.gridApi.updateRowData({add: arrEmp})
     })
   }
 }

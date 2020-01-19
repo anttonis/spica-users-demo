@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeeAddComponent } from './components/employee-add/employee-add.component';
+import { PresenceListComponent } from './components/presence-list/presence-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EmployeeAddComponent } from './components/employee-add/employee-add.com
     HeaderComponent,
     EmployeeListComponent,
     EmployeeAddComponent,
-    routingComponents
+    routingComponents,
+    PresenceListComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,6 @@ export class ConfigService {
   
     constructor() { }
   
-    loggedIn() {
-      return this.getToken() !== 'undefined';
-    }
   
     getToken() {
       return localStorage.getItem('token')

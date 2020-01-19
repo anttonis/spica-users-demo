@@ -30,14 +30,12 @@ export class EmployeeAddComponent implements OnInit {
     } else if (!this.validateEMSO()) {
       this.notValidInput = "Please enter valid 'Maticna stevilka' (13 numbers).";
     } else {
-      console.log("Valid!")
-
       this.notValidInput = "";
 
       const employee = {
         FirstName: this.FirstName,
         LastName: this.LastName,
-        OrganizationalUnitId: Number(this.Emso),
+        AdditionalField1: this.Emso,
       }
   
       this.addEmployee.emit(employee);

@@ -11,14 +11,13 @@ import { ConfigService } from './config.service';
 
 export class EmployeeService extends BaseService {
 
-  resource: string = 'employee'; 
+  resource: string = 'employee';
 
   constructor(http: HttpClient, configService: ConfigService) { 
     super(http, configService);
   }
 
   getEmployees():Observable<Employee[]>{
-    console.log(this.getResourceURL('employee'));
     return this.get<Employee[]>();
     //return this.http.get<Employee[]>(this.getResourceURL(this.resource), this.getHttpOptions());
   }
