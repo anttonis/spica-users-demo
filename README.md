@@ -2,26 +2,41 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
-## Development server
+## Development server with proxy
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Modify `proxy.config.json` file: 
+"start": "ng serve --proxy-config proxy.config.json",
 
-## Code scaffolding
+```js
+{
+    "/timeapi/*": {
+      "target": "http://<host>:<port>",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+and file `proxy.config.json` with:
+```js
+"start": "ng serve --proxy-config proxy.config.json"
+```
 
-## Build
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Settings
 
-## Running unit tests
+Enter Api Url & token to continue. The url and token are locally stored therefore no need to enter them next time.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Users page
 
-## Running end-to-end tests
+Users page shows current employees.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Search by First and Last name by typing inside the search box.
 
-## Further help
+Add new User by navigating to "Add User" tab and enter values. Note that all fields need to be correctly entered (e.g. Maticna st. requires 13 numbers).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Presence page
+
+User is able to see current employee presence by picking a date & time - i.e. shows if the employee has been pressent since entered time.
