@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
+Run `npm install -g @angular/cli` to install Angular CLI as well as `npm install --save-dev @angular-devkit/build-angular`
+
 ## Development server with proxy
 
 Modify `proxy.config.json` file: 

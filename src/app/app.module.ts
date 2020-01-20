@@ -6,7 +6,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GridListComponent } from './sandbox/grid-list/grid-list.component';
+//import { GridListComponent } from './sandbox/grid-list/grid-list.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
@@ -17,7 +17,7 @@ import { PresenceListComponent } from './components/presence-list/presence-list.
 @NgModule({
   declarations: [
     AppComponent,
-    GridListComponent,
+    //GridListComponent,
     HeaderComponent,
     EmployeeListComponent,
     EmployeeAddComponent,
